@@ -15,8 +15,9 @@ class TodoList extends Component {
     handleItemClick = (item) => {
         let existed_item= this.state.datas.find(data=> item.text === data.text);
         if(existed_item) {
+            let new_items = this.state.datas.filter(data=> item.text !== data.text)
             this.setState({
-                
+                datas: new_items
             })
         }
         else {
